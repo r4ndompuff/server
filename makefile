@@ -5,11 +5,11 @@ all: server.o client.o
 clean:
 	rm -rf 'server' 'client' *.o
 
-server:
-	./server
+s:
+	./server 5001
 
-client:
-	./client 127.0.0.1
+c:
+	./client 5001 127.0.0.1
 
 valgrind:
 	valgrind --track-origins=yes --leak-check=full ./server
